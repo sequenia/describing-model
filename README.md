@@ -81,10 +81,10 @@ class SomeModel extends DescribingModel {
       }
     ]
   }
-
-  const instance = new SomeModel();
-  export { instance as SomeModel };
 }
+
+const instance = new SomeModel();
+export { instance as SomeModel };
 
 // some_other_file.js
 
