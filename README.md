@@ -13,16 +13,85 @@ npm install --save @sequenia/describing-model
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+// some_model.js
+import { DescribingModel } from '@sequenia/describing-model'
 
-import MyComponent from '@sequenia/describing-model'
-import '@sequenia/describing-model/dist/index.css'
+class SomeModel extends DescribingModel {
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
+  displayName(item) {
+    return `${item.type} - ${item.name}`;
   }
+
+  listCells(items = undefined, {} = {}) {
+    return [
+      {
+        name: "type",
+        displayName: "Model's type",
+        type: "enum",
+        data: [
+          {
+            key: "simple",
+            value: "Simple"
+          },
+          {
+            key: "extended",
+            value: "Extended"
+          },
+          {
+            key: "user_defined",
+            value: "User defined"
+          }
+        ]
+      },
+      {
+        name: "name",
+        displayName: "Name",
+        type: "text",
+        sortKey: "name"
+      }
+    ]
+  }
+
+  formFields(item = undefined, {} = {}) {
+    return [
+      {
+        name: "type",
+        displayName: "Model's type",
+        type: "enum",
+        data: [
+          {
+            key: "simple",
+            value: "Simple"
+          },
+          {
+            key: "extended",
+            value: "Extended"
+          },
+          {
+            key: "user_defined",
+            value: "User defined"
+          }
+        ],
+        required: true
+      },
+      {
+        name: "name",
+        displayName: "Name",
+        type: "text"
+      }
+    ]
+  }
+
+  const instance = new SomeModel();
+  export { instance as SomeModel };
 }
+
+// some_other_file.js
+
+import { SomeModel } from "path/to/some_model.js"
+
+console.log(SomeModel.displayName(someItem));
+console.log(SomeModel.listCells(displayItems));
 ```
 
 ## License

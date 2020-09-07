@@ -1,10 +1,13 @@
 import React from 'react'
 
-import { ExampleComponent } from '@sequenia/describing-model'
-import '@sequenia/describing-model/dist/index.css'
+import { DescribingModel } from '@sequenia/describing-model'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const model = new DescribingModel();
+
+  return <React.Fragment>
+    { "OLOLO" }
+  </React.Fragment>
 }
 
 export default App

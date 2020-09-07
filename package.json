@@ -1,6 +1,6 @@
 {
   "name": "@sequenia/describing-model",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Simple way for define you data class and describe that fields, display name, way for render html-forms and tables",
   "author": "sequenia",
   "license": "MIT",
