@@ -14,7 +14,7 @@ npm install --save @sequenia/describing-model
 
 ```jsx
 // some_model.js
-import { DescribingModel } from '@sequenia/describing-model'
+import DescribingModel from '@sequenia/describing-model'
 
 class SomeModel extends DescribingModel {
 
